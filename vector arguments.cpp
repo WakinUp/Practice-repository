@@ -12,13 +12,13 @@ using namespace std;
 int main()
 {
 	// Testing different ways to declare a vector in C++:
-	vector<int> emptyVec;											// empty vector of ints
-	vector<int> definedVec = { 1, 2, 3, 4, 5, 7, 10 };				// vector values assignment at sdeclaration
-	vector<int> iteratedVec(definedVec.begin(), definedVec.end());	// iterating through "second" vector
-	vector<int> copiedVec(iteratedVec);								// copy of third
-	vector<int> filled(5, 10);										// filled with size 5, all "10" values	
-	int arrInt[] = { 2, 9, 3, 10, 45 };								// predefined array of ints 
-	vector<int> import(arrInt, arrInt + sizeof(arrInt) / sizeof(int) );
+	vector<int> emptyVec;							// empty vector of ints
+	vector<int> definedVec = { 1, 2, 3, 4, 5, 7, 10 };			// vector values assignment at sdeclaration
+	vector<int> iteratedVec(definedVec.begin(), definedVec.end());		// iterating through "second" vector
+	vector<int> copiedVec(iteratedVec);					// copy of third
+	vector<int> filled(5, 10);						// filled with size 5, all "10" values	
+	int arrInt[] = { 2, 9, 3, 10, 45 };					// predefined array of ints 
+	vector<int> import(arrInt, arrInt + sizeof(arrInt) / sizeof(int) );	// copy constructor using a predefined array
 
 	cout << "The contents of emptyVec are:";
 	for (vector<int>::iterator it = emptyVec.begin(); it != emptyVec.end(); ++it)
@@ -49,7 +49,6 @@ int main()
 	for(int n : arrInt)
 		cout << ' ' << n;
 	cout << '\n';
-
 
 	cout << '\n'; cout << "The contents of import are:";
 	for (vector<int>::iterator it = import.begin(); it != import.end(); ++it)
